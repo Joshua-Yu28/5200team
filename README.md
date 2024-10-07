@@ -10,7 +10,7 @@ DONT FORGET TO CHANGE THE LOAD DATA INFILE FILEPATH TO YOUR OWN PATH.
 
 NOTE: 
 Because the data set is huge, the default buffer pool size 8MB which is not enough to load some of the tables. 
-You will need to increase the buffer pool size. I increased to 4G, which should be plenty to load the datas. YOU SHOULD INCREASE THIS BASE ON YOUR COMPUTERS MEMORY. 
+You will need to increase the buffer pool size. I increased to 12G, which should be plenty to load the datas. YOU SHOULD INCREASE THIS BASE ON YOUR COMPUTERS MEMORY (recommanded to be 70%-80% or your machine's total memory). 
 To increase the buffer pool size, you need to go in to yor my.cnf file for mySQL. Which is typically locatted in /etc/mysql/my.cnf 
 use a editor for example nano (should come with mac), run 'sudo nano my.cnf'
 Once in the file you will see:
@@ -20,16 +20,17 @@ Once in the file you will see:
     [client]
     loose-local-infile=1
 
-Simply add the line 'innodb_buffer_pool_size=4G ' under the [mysqld]. 
+Simply add the line 'innodb_buffer_pool_size=12G ' under the [mysqld]. 
 Also add some other configs to increase load run time. 
 
 Your ending my.cnf file should look like this: 
     [mysqld]
     secure-file-priv = ""
     local-infile=1
-    innodb_buffer_pool_size=4G
-    max_connections=200
+    innodb_buffer_pool_size=12G
+    innodb_log_buffer_size = 128M
     innodb_log_file_size=1G
+    innodb_io_capacity = 2000
     [client]
     loose-local-infile=1
 
