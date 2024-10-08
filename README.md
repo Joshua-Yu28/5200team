@@ -4,6 +4,7 @@ Redommended sequence of execution:
     3. name.basics
     4. title.episodes
     5. title.crew
+    6. title.principals
 
 DONT FORGET TO CHANGE THE LOAD DATA INFILE FILEPATH TO YOUR OWN PATH.
 
@@ -31,6 +32,11 @@ Your ending my.cnf file should look like this:
     innodb_log_buffer_size = 128M
     innodb_log_file_size=1G
     innodb_io_capacity = 2000
+    max_allowed_packet = 256M
+    interactive_timeout = 28800
+    wait_timeout = 28800
+    net_read_timeout = 300
+    net_write_timeout = 300
     [client]
     loose-local-infile=1
 
