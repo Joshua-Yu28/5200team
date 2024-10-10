@@ -1,3 +1,5 @@
+The Dataset used can be found on https://developer.imdb.com/non-commercial-datasets/
+
 Redommended sequence of execution:
     1. title.basic 
     2. title.ratings 
@@ -5,6 +7,7 @@ Redommended sequence of execution:
     4. title.episodes
     5. title.crew
     6. title.principals
+    7. otherTables
 
 DONT FORGET TO CHANGE THE LOAD DATA INFILE FILEPATH TO YOUR OWN PATH.
 
